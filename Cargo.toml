@@ -29,7 +29,7 @@ members = [
     "event-common",
     "websocket-integration",
     "server",
-    "ditto-operator",
+    #"ditto-operator",
 ]
 exclude = [
     "console-frontend"
