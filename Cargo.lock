@@ -1684,9 +1684,8 @@ checksum = "77c90badedccf4105eca100756a0b1289e191f6fcbdadd3cee1d2f614f97da8f"
 
 [[package]]
 name = "drogue-client"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc2d7b2a561d644f52ee38b2c09536f2b2857dd0bc79eef154d2195fadfd2eb8"
+version = "0.9.0-alpha.1"
+source = "git+https://github.com/drogue-iot/drogue-client?rev=1c55d117679fc9f8a001b7714cc6b7bd8de0a2ed#1c55d117679fc9f8a001b7714cc6b7bd8de0a2ed"
 dependencies = [
  "async-std",
  "async-trait",
@@ -2008,6 +2007,45 @@ dependencies = [
  "tokio-postgres",
  "url",
  "uuid",
+ "x509-parser",
+]
+
+[[package]]
+name = "drogue-cloud-ditto-operator"
+version = "0.8.0"
+dependencies = [
+ "actix",
+ "anyhow",
+ "async-std",
+ "async-trait",
+ "bcrypt",
+ "chrono",
+ "config 0.11.0",
+ "dotenv",
+ "drogue-client",
+ "drogue-cloud-database-common",
+ "drogue-cloud-operator-common",
+ "drogue-cloud-registry-events",
+ "drogue-cloud-service-api",
+ "drogue-cloud-service-common",
+ "env_logger 0.7.1",
+ "futures",
+ "headers",
+ "http",
+ "humantime 2.1.0",
+ "humantime-serde",
+ "indexmap",
+ "lazy_static 1.4.0",
+ "log",
+ "maplit",
+ "rand 0.7.3",
+ "reqwest",
+ "rust-crypto",
+ "serde 1.0.130",
+ "serde_json",
+ "thiserror",
+ "tokio 1.11.0",
+ "url",
  "x509-parser",
 ]
 

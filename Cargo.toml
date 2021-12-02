@@ -29,7 +29,7 @@ members = [
     "event-common",
     "websocket-integration",
     "server",
-    #"ditto-operator",
+    "ditto-operator",
 ]
 exclude = [
     "console-frontend"
@@ -41,7 +41,7 @@ testcontainers = { git = "https://github.com/testcontainers/testcontainers-rs", 
 #reqwest = { git = "https://github.com/ctron/reqwest", branch = "feature/basic_auth_wasm_1" }
 #drogue-ttn = { git = "https://github.com/drogue-iot/drogue-ttn", rev = "cf0338a344309815f0f05e0d7d76acb712445175" } # FIXME: awaiting release
 
-#drogue-client = { git = "https://github.com/drogue-iot/drogue-client", rev = "916829633f49e08d32d8dfe91586e76ca68fc7de" } # FIXME: awaiting release
+drogue-client = { git = "https://github.com/drogue-iot/drogue-client", rev = "1c55d117679fc9f8a001b7714cc6b7bd8de0a2ed" } # FIXME: awaiting release
 #drogue-client = { path = "../drogue-client" }
 
 #operator-framework = { git = "https://github.com/ctron/operator-framework", rev = "b2b0fc88beca2deb07bad6a963d0d5322c9ddff8" }
