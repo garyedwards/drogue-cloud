@@ -1685,7 +1685,7 @@ checksum = "77c90badedccf4105eca100756a0b1289e191f6fcbdadd3cee1d2f614f97da8f"
 [[package]]
 name = "drogue-client"
 version = "0.9.0-alpha.1"
-source = "git+https://github.com/drogue-iot/drogue-client?rev=1c55d117679fc9f8a001b7714cc6b7bd8de0a2ed#1c55d117679fc9f8a001b7714cc6b7bd8de0a2ed"
+source = "git+https://github.com/drogue-iot/drogue-client?rev=1403d51329b858f5e75127b7c552dff717679800#1403d51329b858f5e75127b7c552dff717679800"
 dependencies = [
  "async-std",
  "async-trait",
@@ -2011,7 +2011,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "drogue-cloud-ditto-operator"
+name = "drogue-cloud-ditto-registry-operator"
 version = "0.8.0"
 dependencies = [
  "actix",
@@ -2043,6 +2043,8 @@ dependencies = [
  "rust-crypto",
  "serde 1.0.130",
  "serde_json",
+ "serde_repr",
+ "serde_with",
  "thiserror",
  "tokio 1.11.0",
  "url",
@@ -5364,6 +5366,17 @@ dependencies = [
  "itoa 0.4.8",
  "ryu",
  "serde 1.0.130",
+]
+
+[[package]]
+name = "serde_repr"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "98d0516900518c29efa217c298fa1f4e6c6ffc85ae29fd7f4ee48f176e1a9ed5"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
