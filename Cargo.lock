@@ -2170,6 +2170,7 @@ dependencies = [
  "ntex-rt",
  "ntex-service",
  "openssl",
+ "prometheus",
  "reqwest",
  "rustls",
  "serde 1.0.130",
