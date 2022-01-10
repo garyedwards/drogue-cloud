@@ -24,6 +24,7 @@ use std::{
     collections::{hash_map::Entry, HashMap},
     sync::Arc,
 };
+use crate::MQTT_CONNECTIONS_COUNTER;
 
 #[derive(Clone)]
 pub struct Session<S>
@@ -58,6 +59,7 @@ where
             device.metadata.name.clone(),
         );
         let device_cache = cache::DeviceCache::new(128, Duration::from_secs(30));
+        MQTT_CONNECTIONS_COUNTER.inc();
         Self {
             auth,
             sender,
@@ -272,6 +274,7 @@ where
         for (_, v) in self.inbox_reader.lock().await.drain() {
             v.close().await;
         }
+        MQTT_CONNECTIONS_COUNTER.dec();
         Ok(())
     }
 }

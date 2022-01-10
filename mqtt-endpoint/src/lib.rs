@@ -22,6 +22,14 @@ use rust_tls::ClientCertVerifier;
 use serde::Deserialize;
 use std::{fmt::Debug, sync::Arc};
 
+use lazy_static::lazy_static;
+use prometheus::{IntGauge};
+
+lazy_static! {
+    pub static ref MQTT_CONNECTIONS_COUNTER: IntGauge =
+        IntGauge::new("drogue_mqtt_connections", "Mqtt Connections").unwrap();
+}
+
 #[derive(Clone, Debug, Deserialize)]
 pub struct Config {
     #[serde(default)]
@@ -114,6 +122,7 @@ pub async fn run(config: Config) -> anyhow::Result<()> {
 
     // run
     if let Some(health) = config.health {
+        prometheus::default_registry().register(Box::new(MQTT_CONNECTIONS_COUNTER.clone())).unwrap();
         // health server
         let health = HealthServer::new(health, vec![Box::new(command_source)], Some(prometheus::default_registry().clone()),);
         futures::try_join!(health.run_ntex(), srv.err_into(),)?;
